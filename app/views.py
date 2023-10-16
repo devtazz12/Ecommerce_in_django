@@ -269,7 +269,11 @@ def activate(request, uidb64, token):
         return redirect("signin") 
     else:
         messages.warning(request,"Activation link is invalid!")
-        return redirect("signup")   
+        return redirect("signup")  
+
+
+def error_404(request,  exception):
+    return render(request, "app/404.html") 
         
     
 
