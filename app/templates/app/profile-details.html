@@ -1,0 +1,48 @@
+{% extends "app/base.html" %}
+
+{% block content %}
+<section class="page-header">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="content">
+					<h1 class="page-name">Dashboard</h1>
+					<ol class="breadcrumb">
+						<li><a href="index.html">Home</a></li>
+						<li class="active">my account</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="user-dashboard page-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="list-inline dashboard-menu text-center">
+          <li><a href="{% url "dashboard" %}">Dashboard</a></li>
+					<li><a  href="{% url "order" %}">Orders</a></li>
+					<li><a class="active" href="{% url "profile_details" %}">Profile Details</a></li>
+        </ul>
+        <div class="dashboard-wrapper dashboard-user-profile">
+          <div class="media">
+            <div class="pull-left text-center" href="#!">
+              <img class="media-object user-img" src="{{profile_info.profile_img.url}}" alt="Image">
+            </div>
+            <div class="media-body">
+              <ul class="user-profile-list">
+                <li><span>Full Name:</span>{{user.first_name}} {{user.last_name}}</li>
+                <li><span>Email:</span>{{user.email}}</li>
+                <li><span>Phone:</span>{{profile_info.phone_number}}</li>
+                <li><span>Date of Birth:</span>{{profile_info.date_of_birth}}</li>
+                <li><a href="{% url "profile_details_update" %}" class="btn btn-small text-bolder">update details</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}

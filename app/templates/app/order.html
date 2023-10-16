@@ -1,0 +1,62 @@
+{% extends "app/base.html" %}
+
+
+{% block content %}
+<section class="page-header">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="content">
+					<h1 class="page-name">Dashboard</h1>
+					<ol class="breadcrumb">
+						<li><a href="index.html">Home</a></li>
+						<li class="active">my account</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="user-dashboard page-wrapper">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<ul class="list-inline dashboard-menu text-center">
+					<li><a href="{% url "dashboard" %}">Dashboard</a></li>
+					<li><a class="active" href="{% url "order" %}">Orders</a></li>
+					<li><a href="{% url "profile_details" %}">Profile Details</a></li>
+				</ul>
+				<div class="dashboard-wrapper user-dashboard">
+					<div class="table-responsive">
+						<table class="table">
+							<thead>
+								<tr>
+									<th>Order ID</th>
+									<th>Date</th>
+									<th>Items</th>
+									<th>Total Price</th>
+									<th>Status</th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody>
+								{% for i in order %}
+								<tr>
+									<td>#{{i.order_id}}</td>
+									<td>{{i.order_date}}</td>
+									<td>{{i.products.count}}</td>
+									<td>Rs{{i.total_amount}}</td>
+									<td><span class="label label-primary">{{i.status}}</span></td>
+									<td><a href="order.html" class="btn btn-default">View</a></td>
+								</tr>
+								{% endfor %}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% endblock content %}

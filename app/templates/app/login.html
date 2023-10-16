@@ -1,0 +1,41 @@
+{% extends "app/base.html" %}
+
+
+{% block content %}
+<section class="signin-page account">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="block text-center">
+          <a class="logo" href="index.html">
+            <img src="images/logo.png" alt="">
+          </a>
+          {% for message in messages %}
+          <div class="alert alert-{{message.tags}} alert-dismissible  show" role="alert">
+            <strong>{{message}}</strong> 
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          {% endfor %}
+          <h2 class="text-center">Welcome Back</h2>
+          <form class="text-left clearfix" action="{% url "signin" %}" method="post" >
+            {% csrf_token %}
+            <div class="form-group">
+              <input type="text" class="form-control"  placeholder="Username" name="username">
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" placeholder="Password" name="password">
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-main text-center" >Login</button>
+            </div>
+          </form>
+          <p class="mt-20">New in this site ?<a href="{% url "signup" %}"> Create New Account</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}
