@@ -15,7 +15,11 @@ class cartAdmin(admin.ModelAdmin):
 admin.site.register(cart, cartAdmin)
 
 admin.site.register(profile)
-admin.site.register(Order)
+class OrderAdmin(admin.ModelAdmin):
+    list_display=('user','order_date','total_amount','status')
+    class Meta:
+        ordering=['-id']
+admin.site.register(Order,OrderAdmin)
 
 
 

@@ -43,7 +43,13 @@ def index(request):
 def products(request):
     categories=category.objects.all()
     subcategories=subcategory.objects.all()
-    products=product.objects.all()[:9]
+    Catid=request.GET.get('catid')
+    if Catid:
+        subcat_id=subcategory.objects.get(pk=Catid)
+        products=product.objects.filter(subcategory=subcat_id)
+    else:
+        products=product.objects.all()[:9]
+
     context={
         'products':products,
         'categories':categories,
@@ -190,7 +196,7 @@ def checkout(request):
         "total_amount":total_price(request)
     }
     return render(request, "app/checkout.html", context)
-
+@login_required
 def order(request):
     order=Order.objects.filter(user=request.user)
     context={
@@ -211,7 +217,7 @@ def place_order(request):
     cart_products.delete()
     return redirect('order')
 
-
+@login_required
 def profile_details(request):
     user_profile=profile.objects.get(user=request.user)
     context = {
@@ -236,7 +242,7 @@ def profile_details_update(request):
         user_detail.save()
         return redirect('profile_details')
     return render(request, "app/profile_details_update.html")
-
+@login_required
 def dashboard(request):
     try:
         user_profile=profile.objects.get(user=request.user)

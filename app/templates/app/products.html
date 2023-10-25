@@ -5,6 +5,7 @@
 
 
 
+
 <!-- Main Menu Section -->
 <section class="menu">
 	<nav class="navbar navigation">
@@ -27,39 +28,26 @@
 
 					<!-- Home -->
 					<li class="dropdown ">
-						<a href="index.html">Home</a>
+						<a href="{% url "home" %}">Home</a>
 					</li><!-- / Home -->
 
 
 					<!-- Elements -->
 					<li class="dropdown dropdown-slide">
-						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
-							data-delay="350" role="button" aria-haspopup="true" aria-expanded="false">Shop <span
+						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"
+							role="button" aria-haspopup="true" aria-expanded="false">Shop <span
 								class="tf-ion-ios-arrow-down"></span></a>
 						<div class="dropdown-menu">
 							<div class="row">
 
 								<!-- Basic -->
-								<div class="col-lg-6 col-md-6 mb-sm-3">
+								<div class="col-lg-12 col-md-12 mb-sm-6">
 									<ul>
 										<li class="dropdown-header">Pages</li>
 										<li role="separator" class="divider"></li>
-										<li><a href="shop.html">Shop</a></li>
-										<li><a href="checkout.html">Checkout</a></li>
-										<li><a href="cart.html">Cart</a></li>
-										<li><a href="pricing.html">Pricing</a></li>
-										<li><a href="confirmation.html">Confirmation</a></li>
-
-									</ul>
-								</div>
-
-								<!-- Layout -->
-								<div class="col-lg-6 col-md-6 mb-sm-3">
-									<ul>
-										<li class="dropdown-header">Layout</li>
-										<li role="separator" class="divider"></li>
-										<li><a href="product-single.html">Product Details</a></li>
-										<li><a href="shop-sidebar.html">Shop With Sidebar</a></li>
+										<li><a href="{% url "products" %}">Shop</a></li>
+										<li><a href="{% url "checkout" %}">Checkout</a></li>
+										<li><a href="{% url "cart" %}">Cart</a></li>
 
 									</ul>
 								</div>
@@ -71,8 +59,8 @@
 
 					<!-- Pages -->
 					<li class="dropdown full-width dropdown-slide">
-						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
-							data-delay="350" role="button" aria-haspopup="true" aria-expanded="false">Pages <span
+						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"
+							role="button" aria-haspopup="true" aria-expanded="false">Pages <span
 								class="tf-ion-ios-arrow-down"></span></a>
 						<div class="dropdown-menu">
 							<div class="row">
@@ -82,11 +70,11 @@
 									<ul>
 										<li class="dropdown-header">Introduction</li>
 										<li role="separator" class="divider"></li>
-										<li><a href="contact.html">Contact Us</a></li>
-										<li><a href="about.html">About Us</a></li>
-										<li><a href="404.html">404 Page</a></li>
-										<li><a href="coming-soon.html">Coming Soon</a></li>
-										<li><a href="faq.html">FAQ</a></li>
+										<li><a href="#">Contact Us</a></li>
+										<li><a href="#">About Us</a></li>
+										<li><a href="#">404 Page</a></li>
+										<li><a href="#">Coming Soon</a></li>
+										<li><a href="#">FAQ</a></li>
 									</ul>
 								</div>
 
@@ -95,10 +83,9 @@
 									<ul>
 										<li class="dropdown-header">Dashboard</li>
 										<li role="separator" class="divider"></li>
-										<li><a href="dashboard.html">User Interface</a></li>
-										<li><a href="order.html">Orders</a></li>
-										<li><a href="address.html">Address</a></li>
-										<li><a href="profile-details.html">Profile Details</a></li>
+										<li><a href="{% url "dashboard" %}">User Interface</a></li>
+										<li><a href="{% url "order" %}">Orders</a></li>					
+										<li><a href="{% url "profile_details" %}">Profile Details</a></li>
 									</ul>
 								</div>
 
@@ -107,50 +94,21 @@
 									<ul>
 										<li class="dropdown-header">Utility</li>
 										<li role="separator" class="divider"></li>
-										<li><a href="login.html">Login Page</a></li>
-										<li><a href="signin.html">Signin Page</a></li>
-										<li><a href="forget-password.html">Forget Password</a></li>
+										<li><a href="{% url "signin" %}">Login Page</a></li>
+										<li><a href="{% url "signup" %}">Signin Page</a></li>
 									</ul>
 								</div>
 
 								<!-- Mega Menu -->
 								<div class="col-sm-3 col-xs-12">
 									<a href="shop.html">
-										<img class="img-responsive" src="static/app/images/shop/header-img.jpg"
-											alt="menu image" />
+										<img class="img-responsive" src="static/app/images/shop/header-img.jpg" alt="menu image" />
 									</a>
 								</div>
 							</div><!-- / .row -->
 						</div><!-- / .dropdown-menu -->
 					</li><!-- / Pages -->
-
-
-
-					<!-- Blog -->
-					<li class="dropdown dropdown-slide">
-						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
-							data-delay="350" role="button" aria-haspopup="true" aria-expanded="false">Blog <span
-								class="tf-ion-ios-arrow-down"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
-							<li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-							<li><a href="blog-full-width.html">Blog Full Width</a></li>
-							<li><a href="blog-grid.html">Blog 2 Columns</a></li>
-							<li><a href="blog-single.html">Blog Single</a></li>
-						</ul>
-					</li><!-- / Blog -->
-
-					<!-- Shop -->
-					<li class="dropdown dropdown-slide">
-						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
-							data-delay="350" role="button" aria-haspopup="true" aria-expanded="false">Elements <span
-								class="tf-ion-ios-arrow-down"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="typography.html">Typography</a></li>
-							<li><a href="buttons.html">Buttons</a></li>
-							<li><a href="alerts.html">Alerts</a></li>
-						</ul>
-					</li><!-- / Blog -->
+					
 				</ul><!-- / .nav .navbar-nav -->
 
 			</div>
@@ -182,33 +140,38 @@
 			<div class="col-md-3">
 				<div class="widget">
 					<h4 class="widget-title">Short By</h4>
-					<form method="post" action="#">
-						<select class="form-control">
-							<option>Man</option>
-							<option>Women</option>
-							<option>Accessories</option>
-							<option>Shoes</option>
-						</select>
-					</form>
+					<div class="panel panel-default">
+						<div class="panel-heading" role="tab" id="headingOne">
+							<a  class="w-100"  href="{% url "products" %}">
+								<h4 class="panel-title text-center">
+									All
+								</h4>
+							</a>
+						</div>
+					</div>
 				</div>
 				<div class="widget product-category">
 					<h4 class="widget-title">Categories</h4>
 					<div class="panel-group commonAccordion" id="accordion" role="tablist" aria-multiselectable="true">
-						{% for i in subcategories %}
+						{% for i in categories %}
 						<div class="panel panel-default">
 							<div class="panel-heading" role="tab" id="headingOne">
 								<h4 class="panel-title">
-									<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+									<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne-{{i.id}}"
 										aria-expanded="true" aria-controls="collapseOne">
-										{{i.category.name}}
+										{{i.name}}
 									</a>
 								</h4>
 							</div>
-							<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
+							<div id="collapseOne-{{i.id}}" class="panel-collapse collapse in" role="tabpanel"
 								aria-labelledby="headingOne">
 								<div class="panel-body">
 									<ul>
-										<li><a href="#!">Brand & Twist</a></li>
+										{% for j in subcategories %}
+										{% if j.category.name == i.name %}
+										<li><a href="/products/?catid={{j.id}}">{{j.name}}</a></li>
+										{% endif %}
+										{% endfor %}
 										
 									</ul>
 								</div>
